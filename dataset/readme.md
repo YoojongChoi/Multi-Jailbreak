@@ -1,4 +1,4 @@
-# Multi_jailbreak_augmented
+# Multi_jailbreak_augmented dataset
 The dataset originates from the Multilingual Jailbreak Challenges in Large Language Models paper and is publicly available at DAMO-NLP-SG/MultiJail, which contains samples in multiple languages. For this work, a subset of the data was selected, focusing specifically on three languages categorized by resource level:
 - English (high-resource)
 - Korean (medium-resource)
