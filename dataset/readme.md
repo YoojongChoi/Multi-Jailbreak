@@ -20,5 +20,5 @@ The tagging scheme follows the categories defined in the "A Cross-Language Inves
 2. To balance the dataset, augmentation was performed using GPT-4o, which generated at least 30 new samples per tag in a one-shot manner, guided by the provided descriptions.
 3. Semantic similarity between original and augmented samples was measured via sentence embeddings, discarding any augmented samples below a 0.75 similarity threshold to maintain data quality and semantic integrity.
 
-## Detail
+## Visit
 https://huggingface.co/datasets/YoojongChoi/multi_jailbreak_augmented#methodology
