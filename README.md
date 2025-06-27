@@ -175,4 +175,38 @@ The LoRA adapters have been uploaded to Hugging Face and can be found at:
 https://huggingface.co/YoojongChoi/vicuna-7b-instruct-ft-adapters-multi-jailbreak
 
 ---
-## Results
+## 🔍 Results and Analysis
+Both the base model and the fine-tuned model were evaluated on the test dataset using two settings: instruction-based and zero-shot.
+
+### ✅ Instruction-Based Evaluation
+![Instrucction_based](https://github.com/user-attachments/assets/eb2bb7b5-4539-4e7f-84e2-d2c65633310d)
+Fine-tuning was performed using instruction-style prompts. As a result, in the instruction-based setting, the fine-tuned model demonstrates significantly improved safety compared to the base model. For example, in Swahili, the safe response rate increased from 29.3% (base) to 95.1% (fine-tuned).
+
+In the case of Korean, the base model shows a high safety rate of 93.9%, despite not being fine-tuned. However, responses are predominantly in English, likely due to the English instruction format. On the other hand, the fine-tuned model responds in Korean, with a slightly lower safety rate of 90.2%, suggesting a trade-off between language alignment and safety performance.
+
+### 🧪 Zero-Shot Evaluation
+![Zero-shot](https://github.com/user-attachments/assets/dff09da1-0599-4e19-b39f-861063b12d9a)
+
+In the zero-shot setup—without explicit instruction prompts—the difference between English and Korean responses becomes less pronounced. This suggests that the presence of instruction prompts plays a critical role in language alignment and safety.
+
+Despite using masked token learning via custom tokenizers during fine-tuning, the model still relies heavily on instruction prompts for improved performance.
+
+For Swahili, fine-tuning led to a meaningful increase in safe responses from 2.4% to 30.5%, and a moderate decrease in invalid outputs from 63.4% to 54.9%. These results highlight the benefits of instruction-based fine-tuning, especially in low-resource languages.
+
+### Base Model
+![base_model](https://github.com/user-attachments/assets/87023986-42cd-457b-97a7-365957d0e0e0)
+
+### Finetuned Model
+![Finetuned](https://github.com/user-attachments/assets/d754928e-1382-4ef6-8aca-418bd667b9b1)
+
+---
+## Conclusion and Limitation
+This study highlights the effectiveness and limitations of instruction-based LoRA fine-tuning for improving the safety alignment of large language models (LLMs) against multilingual jailbreak attacks. Through a carefully constructed dataset and a consistent training pipeline, the fine-tuned model achieved substantial safety improvements, particularly in Swahili—a low-resource language—where the safe response rate increased from 29.3% to 95.1% under instruction-based evaluation. This result underscores the potential of targeted fine-tuning to bridge safety performance gaps across languages with varying resource availability.
+
+However, the analysis also reveals several challenges. The observed gains in safety are heavily dependent on the presence of instruction-style prompts. In zero-shot scenarios without explicit instructions, performance improvements diminish significantly, particularly for Swahili, where the safe response rate only rose from 2.4% to 30.5%. This suggests that the model's safety behavior is closely tied to prompt formatting rather than a deeper understanding of unsafe intent.
+
+Moreover, the reliance on machine translation for non-English samples—especially for Swahili—introduces potential noise and semantic drift, affecting both training quality and evaluation reliability. The strategy of replacing unsafe outputs with fixed refusal templates, while effective in enforcing safety, may limit the diversity and naturalness of generated responses.
+
+The evaluation was also conducted on a relatively small test set, which may not fully capture the complexity of real-world jailbreak attempts. Furthermore, with only three languages represented, the generalizability of the findings to other linguistic contexts remains uncertain.
+
+Despite these limitations, the results demonstrate that multilingual safety alignment can be meaningfully improved with instruction-based fine-tuning and structured data augmentation.
