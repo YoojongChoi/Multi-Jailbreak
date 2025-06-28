@@ -1,4 +1,4 @@
-## 🛡️ MultiJailbreak
+## 🛡️ Multi-Jailbreak-Attacks Project
 This project focuses on improving the robustness of large language models (LLMs) against jailbreak attacks across multiple languages. The methodology follow the framework presented in the paper "A Cross-Language Investigation into Jailbreak Attacks in Large Language Models".
 
 To enhance safety alignment, LoRA fine-tuning was applied. Notably, Swahili—a low-resource language—showed a dramatic improvement in safety classification accuracy from 29.3% to 95.1%, highlighting the effectiveness of the approach.
