@@ -1,5 +1,5 @@
 ## 🛡️ Multi-Jailbreak-Attacks Project
-This project focuses on improving the robustness of large language models (LLMs) against jailbreak attacks across multiple languages. The methodology follow the framework presented in the paper "A Cross-Language Investigation into Jailbreak Attacks in Large Language Models".
+This project focuses on improving the robustness of large language models (LLMs) against jailbreak attacks across multiple languages. The methodology follow the framework presented in the paper "**A Cross-Language Investigation into Jailbreak Attacks in Large Language Models**".
 
 To enhance safety alignment, LoRA fine-tuning was applied. Notably, Swahili—a low-resource language—showed a dramatic improvement in safety classification accuracy from 29.3% to 95.1%, highlighting the effectiveness of the approach.
 
@@ -10,7 +10,7 @@ Three languages were selected based on resource availability:
 
 ---
 ## 📚 Dataset Construction
-The dataset is based on DAMO-NLP-SG/MultiJail. To align with the attack scenarios described in the original paper, several modifications were made:
+The dataset is based on **DAMO-NLP-SG/MultiJail**. To align with the attack scenarios described in the original paper, several modifications were made:
 
 ### 🔖 Semantic Tagging
 The original 74 tags from the base dataset were clustered into 8 broader categories:
@@ -178,13 +178,13 @@ https://huggingface.co/YoojongChoi/vicuna-7b-instruct-ft-adapters-multi-jailbrea
 ## 🔍 Results and Analysis
 Both the base model and the fine-tuned model were evaluated on the test dataset using two settings: instruction-based and zero-shot.
 
-### ✅ Instruction-Based Evaluation
+### 🧪 Instruction-Based Evaluation
 ![Instrucction_based](https://github.com/user-attachments/assets/eb2bb7b5-4539-4e7f-84e2-d2c65633310d)
 Fine-tuning was performed using instruction-style prompts. As a result, in the instruction-based setting, the fine-tuned model demonstrates significantly improved safety compared to the base model. For example, in Swahili, the safe response rate increased from 29.3% (base) to 95.1% (fine-tuned).
 
 In the case of Korean, the base model shows a high safety rate of 93.9%, despite not being fine-tuned. However, responses are predominantly in English, likely due to the English instruction format. On the other hand, the fine-tuned model responds in Korean, with a slightly lower safety rate of 90.2%, suggesting a trade-off between language alignment and safety performance.
 
-### 🧪 Zero-Shot Evaluation
+### 🧪 Zero-Shot Evaluation (without Instruction)
 ![Zero-shot](https://github.com/user-attachments/assets/dff09da1-0599-4e19-b39f-861063b12d9a)
 
 In the zero-shot setup—without explicit instruction prompts—the difference between English and Korean responses becomes less pronounced. This suggests that the presence of instruction prompts plays a critical role in language alignment and safety.
