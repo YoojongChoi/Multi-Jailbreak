@@ -10,7 +10,8 @@ Three languages were selected based on resource availability:
 
 ---
 ## 📚 Dataset Construction
-The dataset is based on **DAMO-NLP-SG/MultiJail**. To align with the attack scenarios described in the original paper, several modifications were made:
+The dataset is based on **DAMO-NLP-SG/MultiJail**. 
+To align with the attack scenarios described in the paper, several modifications were made:
 
 ### 🔖 Semantic Tagging
 The original 74 tags from the base dataset were clustered into 8 broader categories:
