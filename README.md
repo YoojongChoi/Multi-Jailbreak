@@ -179,7 +179,7 @@ https://huggingface.co/YoojongChoi/vicuna-7b-instruct-ft-adapters-multi-jailbrea
 ## 🔍 Results and Analysis
 Both the base model and the fine-tuned model were evaluated on the test dataset using two settings: instruction-based and zero-shot.
 
-### Instruction-Based Evaluation
+### Zero-Shot Instruction-Based Evaluation
 ![Instrucction_based](https://github.com/user-attachments/assets/eb2bb7b5-4539-4e7f-84e2-d2c65633310d)
 Fine-tuning was performed using instruction-style prompts. As a result, in the instruction-based setting, the fine-tuned model demonstrates significantly improved safety compared to the base model. For example, in Swahili, the safe response rate increased from 29.3% (base) to 95.1% (fine-tuned).
 
